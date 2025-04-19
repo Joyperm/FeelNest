@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginBottom="30dp"
+    android:background="@drawable/card_background">
+
+    <!-- Title for Pie Chart -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Overall Mood Distribution"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/jua"
+        android:layout_margin="16dp"
+        android:gravity="center"
+        android:textColor="#4F3422"/>
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pieChart"
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"/>
+
+    <!-- Month Selector Section - Now positioned right before the bar chart -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Filter Bar Chart by Month: "
+            android:fontFamily="@font/jua"
+            android:textSize="16sp"
+            android:layout_margin="16dp"
+            android:textColor="#4F3422"/>
+
+        <Spinner
+            android:id="@+id/monthSpinner"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:spinnerMode="dropdown"
+            android:background="@drawable/rounded_input"/>
+    </LinearLayout>
+
+    <!-- Title for Bar Chart -->
+    <TextView
+        android:id="@+id/barChartTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Monthly Mood Analysis"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/jua"
+        android:gravity="center"
+        android:layout_marginBottom="8dp"
+        android:textColor="#4F3422"/>
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/barChart"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_margin="10dp"
+        android:layout_gravity="center_horizontal"/>
+</LinearLayout>

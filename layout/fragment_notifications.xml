@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/card_background"
+    tools:context=".ui.notifications.NotificationsFragment">
+    <!-- Input Layout -->
+    <RelativeLayout
+        android:id="@+id/inputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/moonIcon"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:src="@drawable/ic_moon"
+            android:contentDescription="Moon icon" />
+
+        <TextView
+            android:id="@+id/wakeUpLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/moonIcon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/jua"
+            android:text="I WANT TO WAKE UP AT"
+            android:textColor="@color/mainFont"
+            android:textSize="18sp" />
+
+        <TimePicker
+            android:id="@+id/timePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/wakeUpLabel"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:timePickerMode="spinner"
+            android:theme="@style/TimePickerTheme" />
+
+        <TextView
+            android:id="@+id/instructionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/timePicker"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/jua"
+            android:text="So I need to go bed at"
+            android:textColor="@color/colorOptimal"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/calculateButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/instructionText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/gradient_button_background"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp"
+            android:text="CALCULATE"
+            android:fontFamily="@font/jua"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:orientation="horizontal"/>
+    </RelativeLayout>
+
+    <!-- Results Layout -->
+    <RelativeLayout
+        android:id="@+id/resultLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/backBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/learnMoreButton"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="239dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/gradient_button_background"
+            android:fontFamily="@font/jua"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp"
+            android:text="Back"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/goToAlarm"
+            android:layout_width="155dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/learnMoreButton"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="205dp"
+            android:background="@drawable/gradient_button_background"
+            android:fontFamily="@font/jua"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp"
+            android:text="Set your Alarm"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/moonIconResult"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/ic_moon"
+            android:contentDescription="Moon icon" />
+
+        <TextView
+            android:id="@+id/wakeUpLabelResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/moonIconResult"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/jua"
+            android:layout_marginTop="20dp"
+            android:text="I WANT TO WAKE UP AT"
+            android:textColor="@color/mainFont"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/wakeUpTimeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/wakeUpLabelResult"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/jua"
+            android:text="06:00"
+            android:textColor="@color/mainFont"
+            android:textSize="48sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/bedtimeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/wakeUpTimeText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/jua"
+            android:text="So I need to go bed at"
+            android:textColor="@color/mainFont"
+            android:textSize="16sp" />
+
+        <GridLayout
+            android:id="@+id/bedtimesGrid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bedtimeLabel"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/jua"
+            android:columnCount="2"
+            android:rowCount="3"
+            android:useDefaultMargins="true"
+            android:layout_margin="16dp"
+            >
+
+            <TextView
+                android:id="@+id/bedtime1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="8:45 PM"
+                android:layout_margin="16dp"
+                android:fontFamily="@font/jua"
+                android:textColor="@color/colorOptimal"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/bedtime2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10:15 PM"
+                android:layout_margin="16dp"
+                android:fontFamily="@font/jua"
+                android:textColor="@color/colorOptimal"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/bedtime3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="11:45 PM"
+                android:layout_margin="16dp"
+                android:fontFamily="@font/jua"
+                android:textColor="@color/mainFont"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/bedtime4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1:15 AM"
+                android:layout_margin="16dp"
+                android:fontFamily="@font/jua"
+                android:textColor="@color/mainFont"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/bedtime5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2:45 AM"
+                android:layout_margin="16dp"
+                android:fontFamily="@font/jua"
+                android:textColor="@color/mainFont"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/bedtime6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4:15 AM"
+                android:layout_margin="16dp"
+                android:fontFamily="@font/jua"
+                android:textColor="@color/mainFont"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </GridLayout>
+
+        <TextView
+            android:id="@+id/optimalSleepText"
+            android:layout_width="305dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bedtimesGrid"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/jua"
+            android:gravity="center"
+            android:text="The time in pink is the best for\nan optimum rest."
+            android:textColor="@color/mainFont"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/learnMoreButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/optimalSleepText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:drawableStart="@drawable/ic_info"
+            android:drawablePadding="8dp"
+            android:fontFamily="@font/jua"
+            android:text="Learn more about Sleep Cycles"
+            android:textColor="#FF5722"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+</FrameLayout>

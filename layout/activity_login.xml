@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg3"
+    tools:context=".LoginActivity">
+
+    <!-- Main white card -->
+    <androidx.cardview.widget.CardView
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="90dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        app:cardCornerRadius="24dp"
+        app:cardBackgroundColor="@android:color/transparent"
+        >
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="24dp"
+            android:background="@drawable/glassy_card_background">
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:src="@drawable/logo"
+                android:id="@+id/logoImg"
+                android:layout_centerHorizontal="true"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/jua"
+                android:text="@string/app_name"
+                android:textColor="@color/mainFont"
+                android:textSize="40sp"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/tvWelcome"
+                android:layout_below="@+id/logoImg"/>
+
+            <!-- Email field -->
+            <TextView
+                android:id="@+id/tvEmailLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvWelcome"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/jua"
+                android:text="Email *"
+                android:textColor="@color/mainFont"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvEmailLabel"
+                android:fontFamily="@font/jua"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rounded_input"
+                android:hint="Example@gmail.com"
+                android:inputType="textEmailAddress"
+                android:padding="16dp"
+                android:textSize="14sp" />
+
+            <!-- Password field -->
+            <TextView
+                android:id="@+id/tvPasswordLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/etEmail"
+                android:layout_marginTop="16dp"
+                android:text="Password *"
+                android:fontFamily="@font/jua"
+                android:textColor="@color/mainFont"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:id="@+id/passwordContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvPasswordLabel"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rounded_input">
+
+                <EditText
+                    android:id="@+id/etPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:fontFamily="@font/jua"
+                    android:hint="••••••••••"
+                    android:inputType="textPassword"
+                    android:padding="16dp"
+                    android:textSize="14sp" />
+
+
+            </RelativeLayout>
+
+
+            <!-- Login button -->
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/passwordContainer"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/gradient_button_background"
+                android:fontFamily="@font/jua"
+                android:padding="16dp"
+                android:text="Log In"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <!-- Leaf decoration in bottom right -->
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
